@@ -16,16 +16,17 @@ function showCheckboxes() {
 
 
 
-var products = [
+const products = [
   { id: 1, name: "Product 1", price: "129$", imageUrl: "picture/men.svg" },
   { id: 2, name: "Product 2", price: "99$", imageUrl: "picture/men.svg" },
 ];
 // console.log(products.name);
+
 // Function to create and display products
 function displayProducts(products) {
     var container = document.getElementById("productsContainer");
     container.innerHTML = " ";
-    var html = "";
+    let html = "";
     let product;
     products.forEach(function(products) {
       // console.log("hi im here bro");

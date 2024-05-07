@@ -306,6 +306,16 @@ header {
   border: 1px solid black;
   transition: 0.8s;
 }
+#marquee{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  text-align: center;
+}
+#marquee p{
+  font-size: 1.2rem;
+}
 /* ------------------------------------------------------------ */
 /* -------------------------- styling section categories --------------------------- */
 .categories_2 {

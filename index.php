@@ -7,45 +7,43 @@
 </head>
 <body>
 <?php
+
+function displayDProduct($row){
+    $id = htmlspecialchars($row[0]);
+    $categorie = htmlspecialchars($row[1]);
+    $title = htmlspecialchars($row[2]);
+    $description = htmlspecialchars($row[3]);
+    $price = htmlspecialchars($row[4]);
+    $picture = htmlspecialchars($row[5]);
+
+    echo "<h2>$title $price</h2>";
+    echo "<img src='$picture' alt='' />";
+}
+
+
+function getDataProduct(){
 $fileP = 'products.csv';
 $file = fopen($fileP, 'r');
 $test = true;
-$categories = ['Women'];
-
+$categories = ['Men'];
 if ($file === false) {
     echo "Failed to open file: $fileP";
 } else {
-    echo "<table border='1'>";
     while (($row = fgetcsv($file)) !== false) {
         if ($test) {
-            echo "<thead>";
-            echo "<tr>";
-            foreach ($row as $value) {
-                echo "<th>".$value."</th>";
-            }
-            echo "</tr>";
-            echo "</thead>\n";
             $test = false;
             continue;
         }
-        // 
-        echo json_encode($row[0]);
-        if (in_array($row[1], $categories)) {
-            echo "<tr>";
-            foreach ($row as $index => $cell) {
-                if ($index === 5 && !empty($cell)) {
-                    echo "<td><img src='" . htmlspecialchars($cell) . "' alt='Image'></td>";
-                } else {
-                    echo "<td>" . htmlspecialchars($cell) . "</td>";
-                }
+        $category = htmlspecialchars($row[1]);
+        if (in_array($category, $categories)) {
+                displayDProduct($row);
             }
-            echo "</tr>";
-        }
     }
-    echo "</table>";
     fclose($file);
 };
+}
+getDataProduct();
 ?>
-    <script src="main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
