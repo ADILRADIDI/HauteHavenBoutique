@@ -1,6 +1,9 @@
 @import url("http://fonts.cdnfonts.com/css/red-rose");
 /* =========================================================================== */
 /* -------------------- page signUp styles ---------------------------------- */
+*{
+  text-decoration: none;
+}
 .bodySignUp,
 .header {
   background-color: bisque;
@@ -261,7 +264,48 @@ header {
 
 /* final header */
 /* -------------------------- styling section hero (i)--------------------------- */
-
+.containerHero{
+  background-image: url('./picture/backgroundhero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  border-radius: 2%;
+}
+.textHero{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #000000;
+}
+.textHero h1{
+  font-size: 3rem;
+}
+.textHero p{
+  font-size: 1rem;
+}
+#btn_shopNow{
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+#btn_shopNow:hover{
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid black;
+  transition: 0.8s;
+}
 /* ------------------------------------------------------------ */
 /* -------------------------- styling section categories --------------------------- */
 .categories_2 {
@@ -292,6 +336,24 @@ header {
 }
 
 /* -------------------------- styling section products--------------------------- */
+#productsContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.price_title{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  color: #000000;
+}
+#pic_prd{
+  width: 240px;
+}
+
 /* ------------------------------------------------------------ */
 /* ============================================================= */
 
@@ -417,6 +479,14 @@ footer {
   #search_input{
     width: 80px;
   }
+  .allBox{
+    display: block;
+    margin: 0 auto;
+  }
+  .box-1{
+    margin: 5% auto;
+    width: 300px;
+  }
 }
 
 /* Media query for screens between 768px and 1024px (e.g., tablets) */
@@ -430,7 +500,10 @@ footer {
     #search_input{
     width: 160px;
   }
-}
+    /* .box-1{
+    /* display: block; */
+    /* flex-wrap: wrap; */
+  }
 
 /* Media query for screens larger than 1024px (e.g., desktops) */
 @media only screen and (min-width: 1025px) {

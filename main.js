@@ -13,12 +13,30 @@ function showCheckboxes() {
   }
 }
 
-// for section hero (i)
-// let next = document.querySelectorAll(".next");
-// let prev = document.querySelectorAll(".prev");
-// next.addEventListener("click", function () {
-//   let items = document.querySelectorAll(".item");
-//   document.querySelector(".slide").appendChild(items[0]);
-// });
 
+
+
+var products = [
+  { id: 1, name: "Product 1", price: "129$", imageUrl: "picture/men.svg" },
+  { id: 2, name: "Product 2", price: "99$", imageUrl: "picture/men.svg" },
+];
+// console.log(products.name);
+// Function to create and display products
+function displayProducts(products) {
+    var container = document.getElementById("productsContainer");
+    container.innerHTML = " ";
+    var html = "";
+    let product;
+    products.forEach(function(products) {
+      // console.log("hi im here bro");
+        html += `<a href="viewProduct.html">
+                    <img id="pic_prd" src="${products.imageUrl}" alt="image_product">
+                    <div class="price_title">
+                        <p id="title">${products.name}</p>
+                        <p id="price">${products.price}</p>
+                    </div>
+                </a>`;});
+    container.innerHTML = html;
+}
+displayProducts(products);
 

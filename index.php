@@ -28,6 +28,7 @@ if ($file === false) {
             $test = false;
             continue;
         }
+        // 
         echo json_encode($row[0]);
         if (in_array($row[1], $categories)) {
             echo "<tr>";
@@ -43,7 +44,7 @@ if ($file === false) {
     }
     echo "</table>";
     fclose($file);
-}
+};
 ?>
     <script src="main.js"></script>
 </body>
