@@ -13,4 +13,12 @@ function showCheckboxes() {
   }
 }
 
+// for section hero (i)
+// let next = document.querySelectorAll(".next");
+// let prev = document.querySelectorAll(".prev");
+// next.addEventListener("click", function () {
+//   let items = document.querySelectorAll(".item");
+//   document.querySelector(".slide").appendChild(items[0]);
+// });
+
 
