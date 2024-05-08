@@ -33,70 +33,54 @@
         <div id="form_signUp">
           <h1>Sign Up</h1>
           <p>sign up for free to access to in of our product</p>
-            <form id="forms" action="signup.php" method="POST">
-            <!-- <label id="label1" for="Email">Email</label> -->
-            <input type="email" name="email" id="email" placeholder="Email" />
-            <!-- <label id="label" for="password">Password</label> -->
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Password"
-              required
-            />
-            <!-- checkbox inside select  -->
-            <div id="selectCategorie">
-              <div class="selectBox" onclick="showCheckboxes()">
-                <select>
-                  <option class="op">Select an Categorie</option>
+      <form method="post" id="forms" >
+        <div id="selectCategorie">
+                  <input id="email" type="email" name="email" placeholder="Email">
+                  <input id="password" type="password" name="password" placeholder="Password">
+            <div class="selectBox" onclick="showCheckboxes()">
+                <select name="categories[]" multiple>
+                    <option value="Men">Men</option>
+                    <option value="Women">Women</option>
+                    <option value="Children">Children</option>
                 </select>
-                <div class="overSelect"></div>
-              </div>
-              <div id="checkboxes">
-                <label for="one"><input type="checkbox" id="one" />categorie 1</label>
-                <label for="two"><input type="checkbox" id="two" />categorie 2</label>
-                <label for="three"><input type="checkbox" id="three" />categorie 2</label>
-                <label for="three"><input type="checkbox" id="three" />categorie 3</label>
-                <label for="three"><input type="checkbox" id="three" />categorie 5</label>
-              </div>
+                <!-- <div class="overSelect"></div> -->
             </div>
-            <div class="permession">
-                <div class="p1 p">
-                    <input type="checkbox" name="permession" id="permession" />
-                    <label for="permession" id="permession_text">I accept the terms and conditions</label>
-                </div>
-                <div class="p3 p">
-                    <input type="checkbox" name="permession" id="permession" />
-                    <label for="permession" id="permession_text">Subscribe to our monthly</label>
-                </div>
+            <div id="checkboxes">
+                <label for="one"><input type="checkbox" id="one" name="categories[]" value="Men" />1_ Men</label>
+                <label for="two"><input type="checkbox" id="two" name="categories[]" value="Women" />2_ Women</label>
+                <label for="three"><input type="checkbox" id="three" name="categories[]" value="Children" />3_ Children</label>
             </div>
-            <div >
-                <a href="#" class="btn_signUp" >Sign Up</a>
+            <div>
+                <input class="adds" type="submit"  value="Submit" style="text-decoration: none; 
+                color: white; font-family: red-rose; background-color: #8a33fd; 
+                border-radius: 10px; padding: 10px 30px; margin-top: 10px;">
             </div>
-          </form>
-              <?php
+        </div>
+        
+      </form>
+
+<?php
+// Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = $_POST["password"];
-
-    // Open the CSV file for appending
-    $usersFile = fopen("users.csv", "a");
-
-    // Write the email and password to the CSV file
-    fputcsv($usersFile, array($email, $password));
-
-    // Close the CSV file
-    fclose($usersFile);
-
-    echo "Signup successful!";
+    // 
+    $selectedCategories = isset($_POST["categories"]) ? $_POST["categories"] : array();
+    foreach ($selectedCategories as $category) {
+    }
+    // 
+    $filePath = 'users.csv';
+    $file = fopen($filePath, 'a');
+    if ($file === false) {
+        echo "Failed to open file: $filePath";
+    } else {
+        fputcsv($file, array($email, $password,$category));
+        fclose($file);
+    }
 }
 ?>
-
-
-    
         </div>
       </div>
     </div>
-
   </body>
 </html>

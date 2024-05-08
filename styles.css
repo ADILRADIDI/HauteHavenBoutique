@@ -1,7 +1,7 @@
 @import url("http://fonts.cdnfonts.com/css/red-rose");
 /* =========================================================================== */
 /* -------------------- page signUp styles ---------------------------------- */
-*{
+* {
   text-decoration: none;
 }
 .bodySignUp,
@@ -48,7 +48,6 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
   width: 250px;
 }
 #email,
@@ -64,6 +63,15 @@ header {
 }
 #password:focus {
   border: 2px solid blue;
+}
+.btn_submit{
+  display: flex;
+  align-items: center;
+  width: 250px;
+  color: white;
+  background-color: #8a33fd;
+  border-radius: 5px;
+  padding: 5px 10px;
 }
 
 /* ---------------------checkbox in signUp-------------------------------- */
@@ -113,9 +121,6 @@ header {
 }
 .p {
   display: flex;
-}
-#permession_text {
-  font-size: 13px;
 }
 /* ------------------------------styling page login------------------------- */
 * {
@@ -189,7 +194,8 @@ header {
 #password:focus {
   border: 2px solid blue;
 }
-.btn_signUp {
+/* btn  mrida  */
+/* .adds{
   text-decoration: none;
   color: white;
   font-family: red-rose;
@@ -197,7 +203,7 @@ header {
   border-radius: 10px;
   padding: 10px 30px;
   margin-top: 10px;
-}
+} */
 
 /* =====================================================================================  */
 /* --------------------------styling page home ----------------------------------------- */
@@ -219,11 +225,11 @@ header {
   text-decoration: none;
   border: 0px;
 }
-.links_bold:hover{
+.links_bold:hover {
   border-bottom: 2px solid #8a33fd;
   transition: 10s;
 }
-.links_light:hover{
+.links_light:hover {
   border-bottom: 2px solid #8a33fd;
   transition: 10s;
 }
@@ -249,8 +255,7 @@ header {
 .links_light {
   font-weight: lighter;
   color: #000000;
-    text-decoration: none;
-
+  text-decoration: none;
 }
 #linkLast {
   background-color: rgb(189, 227, 227);
@@ -264,8 +269,8 @@ header {
 
 /* final header */
 /* -------------------------- styling section hero (i)--------------------------- */
-.containerHero{
-  background-image: url('./picture/backgroundhero.jpg');
+.containerHero {
+  background-image: url("./picture/backgroundhero.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -273,7 +278,7 @@ header {
   height: 100vh;
   border-radius: 2%;
 }
-.textHero{
+.textHero {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -281,13 +286,13 @@ header {
   height: 100vh;
   color: #000000;
 }
-.textHero h1{
+.textHero h1 {
   font-size: 3rem;
 }
-.textHero p{
+.textHero p {
   font-size: 1rem;
 }
-#btn_shopNow{
+#btn_shopNow {
   background-color: #000000;
   color: #ffffff;
   border: none;
@@ -300,20 +305,20 @@ header {
   justify-content: center;
   margin-top: 10px;
 }
-#btn_shopNow:hover{
+#btn_shopNow:hover {
   background-color: transparent;
   color: #000000;
   border: 1px solid black;
   transition: 0.8s;
 }
-#marquee{
+#marquee {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 10px;
   text-align: center;
 }
-#marquee p{
+#marquee p {
   font-size: 1.2rem;
 }
 /* ------------------------------------------------------------ */
@@ -341,19 +346,19 @@ header {
 #exCategorie p {
   color: #000000;
 }
-.text{
-    text-decoration: none;
+.text {
+  text-decoration: none;
 }
 
 /* -------------------------- styling section products--------------------------- */
-#productsContainer{
+#productsContainer {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 10px;
 }
-.price_title{
+.price_title {
   width: 200px;
   display: flex;
   align-items: center;
@@ -361,96 +366,95 @@ header {
   color: #000000;
   gap: 10px;
 }
-#pic_prd{
+#pic_prd {
   width: 200px;
   height: 200px;
   border-radius: 5%;
 }
 
 /* -------------------- page view product  ---------------------------------------- */
-.product{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 0px 10px;
-    border-radius: 5px;
-    font-family: system-ui;
- }
-.image-product{
-    width: 785px;
-    height: 540px;
+.product {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0px 10px;
+  border-radius: 5px;
+  font-family: system-ui;
 }
-.caracteristique{
-    margin-top: 80px;
-    font-size: 10px;
-    font-weight: bold;
+.image-product {
+  width: 785px;
+  height: 540px;
 }
-.btn-size{
-    text-align: center;
-    bottom: 20px;
+.caracteristique {
+  margin-top: 80px;
+  font-size: 10px;
+  font-weight: bold;
 }
-.btn-size .btn-size{
-    width: 40px;
-    height: 35px ;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    margin: 0 5px ;
-    transition: 0.3s;
+.btn-size {
+  text-align: center;
+  bottom: 20px;
 }
-.btn-size:hover{
-    background: black;
-    color: black;
+.btn-size .btn-size {
+  width: 40px;
+  height: 35px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: 0.3s;
+}
+.btn-size:hover {
+  background: black;
+  color: black;
 }
 
-.add{
-    position: relative;
-    height: 60px;
-    width: 200px;
-    align-items: center;
-    text-align: center;
-    margin :0 35px;
-    border-radius: 50px;
-    border: none;
-    outline: none;
-    background:gray;
-    color: black;
-    font-size:  20px ;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
+.add {
+  position: relative;
+  height: 60px;
+  width: 200px;
+  align-items: center;
+  text-align: center;
+  margin: 0 35px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background: gray;
+  color: black;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
 }
-.add:hover{
-    background: linear-gradient(90deg,#03A9F4,#F441A5,#FFEB3B,#03A9F4
-);
-    background-size: 400%;
-    z-index: 1;
-    animation: glow 8s inherit infinite;
+.add:hover {
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  z-index: 1;
+  animation: glow 8s inherit infinite;
 }
-.add::before{
-    content: "";
-    background:inherit;
-    position: absolute;
-    top: -5px ;
-    right: -5px;
-    bottom: -5px;
-    left: -5px;
-    border-radius: 50px;
-    filter: blur(20px);
-    opacity: 0;
-    transition: opacity  0.5s;
+.add::before {
+  content: "";
+  background: inherit;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border-radius: 50px;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.5s;
 }
-.add:hover:before{
-    opacity:1;
-    z-index: -1;
+.add:hover:before {
+  opacity: 1;
+  z-index: -1;
 }
-@keyframes glow{
-    0%{
-       background-position: 0%;
-    }
-    100%{
-        background-position: 400%;
-    }
+@keyframes glow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
 }
 
 /* ============================================================= */
@@ -551,37 +555,28 @@ footer {
   align-items: center;
   text-align: center;
 }
-.container_footer li:hover{
-    color: yellow;
+.container_footer li:hover {
+  color: yellow;
 }
-
-
-
-
-
-
-
-
-
 
 /*========================================== media query ========================================== */
 /* ----------------------------------------------------------------------------------------------- */
 /* Media query for screens smaller than 768px (e.g., smartphones) */
 @media only screen and (max-width: 767px) {
-    .linkss{
+  .linkss {
     display: none;
   }
-    #logo--text{
+  #logo--text {
     font-size: 15px;
   }
-  #search_input{
+  #search_input {
     width: 80px;
   }
-  .allBox{
+  .allBox {
     display: block;
     margin: 0 auto;
   }
-  .box-1{
+  .box-1 {
     margin: 5% auto;
     width: 300px;
   }
@@ -589,21 +584,20 @@ footer {
 
 /* Media query for screens between 768px and 1024px (e.g., tablets) */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .linkss{
+  .linkss {
     display: none;
   }
-  #logo--text{
+  #logo--text {
     font-size: 15px;
   }
-    #search_input{
+  #search_input {
     width: 160px;
   }
-    /* .box-1{
+  /* .box-1{
     /* display: block; */
-    /* flex-wrap: wrap; */
-  }
+  /* flex-wrap: wrap; */
+}
 
 /* Media query for screens larger than 1024px (e.g., desktops) */
 @media only screen and (min-width: 1025px) {
-
 }
