@@ -354,17 +354,105 @@ header {
   margin-top: 10px;
 }
 .price_title{
+  width: 200px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  flex-wrap: wrap;
   color: #000000;
+  gap: 10px;
 }
 #pic_prd{
-  width: 240px;
+  width: 200px;
+  height: 200px;
+  border-radius: 5%;
 }
 
-/* ------------------------------------------------------------ */
+/* -------------------- page view product  ---------------------------------------- */
+.product{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0px 10px;
+    border-radius: 5px;
+    font-family: system-ui;
+ }
+.image-product{
+    width: 785px;
+    height: 540px;
+}
+.caracteristique{
+    margin-top: 80px;
+    font-size: 10px;
+    font-weight: bold;
+}
+.btn-size{
+    text-align: center;
+    bottom: 20px;
+}
+.btn-size .btn-size{
+    width: 40px;
+    height: 35px ;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px ;
+    transition: 0.3s;
+}
+.btn-size:hover{
+    background: black;
+    color: black;
+}
+
+.add{
+    position: relative;
+    height: 60px;
+    width: 200px;
+    align-items: center;
+    text-align: center;
+    margin :0 35px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background:gray;
+    color: black;
+    font-size:  20px ;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.add:hover{
+    background: linear-gradient(90deg,#03A9F4,#F441A5,#FFEB3B,#03A9F4
+);
+    background-size: 400%;
+    z-index: 1;
+    animation: glow 8s inherit infinite;
+}
+.add::before{
+    content: "";
+    background:inherit;
+    position: absolute;
+    top: -5px ;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50px;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity  0.5s;
+}
+.add:hover:before{
+    opacity:1;
+    z-index: -1;
+}
+@keyframes glow{
+    0%{
+       background-position: 0%;
+    }
+    100%{
+        background-position: 400%;
+    }
+}
+
 /* ============================================================= */
 
 /* -------------------------- styling section Top brands--------------------------- */

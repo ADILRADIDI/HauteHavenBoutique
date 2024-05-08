@@ -23,7 +23,7 @@
       <header class="header">
         <div class="title"><h1>HauteHavenBoutique</h1></div>
         <div class="nav">
-          <a id="btn_login" href="login.html">login</a>
+          <a id="btn_login" href="login.php">login</a>
         </div>
       </header>
       <div class="formContainer">
@@ -33,7 +33,7 @@
         <div id="form_signUp">
           <h1>Sign Up</h1>
           <p>sign up for free to access to in of our product</p>
-          <form id="forms" action="">
+            <form id="forms" action="signup.php" method="POST">
             <!-- <label id="label1" for="Email">Email</label> -->
             <input type="email" name="email" id="email" placeholder="Email" />
             <!-- <label id="label" for="password">Password</label> -->
@@ -42,6 +42,7 @@
               name="password"
               id="password"
               placeholder="Password"
+              required
             />
             <!-- checkbox inside select  -->
             <div id="selectCategorie">
@@ -70,11 +71,32 @@
                 </div>
             </div>
             <div >
-                <a href="login.html" class="btn_signUp" >Sign Up</a>
+                <a href="#" class="btn_signUp" >Sign Up</a>
             </div>
           </form>
+              <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    // Open the CSV file for appending
+    $usersFile = fopen("users.csv", "a");
+
+    // Write the email and password to the CSV file
+    fputcsv($usersFile, array($email, $password));
+
+    // Close the CSV file
+    fclose($usersFile);
+
+    echo "Signup successful!";
+}
+?>
+
+
+    
         </div>
       </div>
     </div>
+
   </body>
 </html>
