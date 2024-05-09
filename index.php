@@ -6,6 +6,7 @@
     <title>Home page</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" />
     <!-- <script src="main.js"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
@@ -17,13 +18,11 @@
         <!-- links -->
         <div class="linkss" id="linkss">
           <a href="index.php" class="links_bold">Home</a>
-          <a href="#" class="links_light">Men</a>
-          <a href="#" class="links_light">Women</a>
-          <a href="#" class="links_light">Children</a>
+          <a href="#Product" class="links_light">Product</a>
+          <a href="#Categorie" class="links_light">Categorie</a>
+          <a href="#ContactUs" class="links_light">Contact us</a>
         </div>
         <!-- search -->
-        <!--  -->
-        <!--  -->
         <div>
           <input type="search" name="" id="search_input" placeholder="search" />
         </div>
@@ -52,7 +51,7 @@
         </div>
       </section>
     <!-- section posts -->
-    <section>
+    <section id="Product">
       <div class="title_section"><h3>Product</h3></div>
       <div id="productsContainer">
         <?php
@@ -64,8 +63,9 @@ function displayDProduct($row){
     $description = htmlspecialchars($row[3]);
     $price = htmlspecialchars($row[4]);
     $picture = htmlspecialchars($row[5]);
+    $arr1 = [$title,$description,$price];
     echo '
-                <a href="viewProduct.php">
+                <a href="viewProduct.php?var='. $id .'" class="prd_link" >
                     <img id="pic_prd" src="' . $picture . '" alt="image_product">
                     <div class="price_title">
                         <p id="title">' . $title . '</p>
@@ -79,7 +79,7 @@ $fileP = 'products.csv';
 $file = fopen($fileP, 'r');
 $test = true;
 // choice in login .
-$categories = ['Children'];
+$categories = ['Children','Women','Men'];
 // $data = array();
 if ($file === false) {
     echo "Failed to open file: $fileP";
@@ -104,7 +104,7 @@ getDataProduct();
     </section>
   
     <!-- section categorie---------------- -->
-    <section class="containerCategorie">
+    <section id="Categorie" class="containerCategorie">
         <div class="title_section"><h3>Categorie</h3></div>
         <div class="categories_2">
             <div id="exCategorie">
@@ -167,7 +167,7 @@ getDataProduct();
         </div>
     </section>
     <!-- footer------------------ -->
-    <footer>
+    <footer id="ContactUs">
       <div class="container_footer">
         <div>
           <h1>Need Help</h1>
@@ -217,9 +217,13 @@ getDataProduct();
           </a>
         </div>
       </div>
+      <!--  -->
+      
+      <!--  -->
       <hr class="hr2">
       <p id="fin-TEXT">Copyright © 2025 HauteHavenBoutique Folks Pvt Ltd. All rights reserved.</p>
     </footer>
-        <script src="main.js"></script>
+        <script src="main.js">
+        </script>
   </body>
 </html>

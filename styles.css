@@ -1,6 +1,9 @@
 @import url("http://fonts.cdnfonts.com/css/red-rose");
 /* =========================================================================== */
 /* -------------------- page signUp styles ---------------------------------- */
+body{
+  scroll-behavior: smooth;
+}
 * {
   text-decoration: none;
 }
@@ -354,7 +357,7 @@ header {
 #productsContainer {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 10px;
 }
@@ -380,6 +383,9 @@ header {
   margin: 0px 10px;
   border-radius: 5px;
   font-family: system-ui;
+}
+.Description{
+  width: 450px;
 }
 .image-product {
   width: 785px;
@@ -601,3 +607,4 @@ footer {
 /* Media query for screens larger than 1024px (e.g., desktops) */
 @media only screen and (min-width: 1025px) {
 }
+
