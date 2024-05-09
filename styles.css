@@ -1,11 +1,12 @@
 @import url("http://fonts.cdnfonts.com/css/red-rose");
 /* =========================================================================== */
 /* -------------------- page signUp styles ---------------------------------- */
-body{
+/* body{
   scroll-behavior: smooth;
-}
+} */
 * {
   text-decoration: none;
+  scroll-behavior: smooth;
 }
 .bodySignUp,
 .header {
@@ -245,7 +246,17 @@ header {
 }
 #search_input {
   outline: none;
-  border-radius: 5px;
+  border-radius: 10px;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#form1{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  
 }
 #search_input:focus {
   border: 2px solid blue;
@@ -564,6 +575,24 @@ footer {
 .container_footer li:hover {
   color: yellow;
 }
+  .btnSearch{
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;;
+  }
+  .btnSearch:hover{
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+  }
+
 
 /*========================================== media query ========================================== */
 /* ----------------------------------------------------------------------------------------------- */
@@ -599,6 +628,7 @@ footer {
   #search_input {
     width: 160px;
   }
+
   /* .box-1{
     /* display: block; */
   /* flex-wrap: wrap; */
