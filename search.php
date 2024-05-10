@@ -42,6 +42,27 @@
         .submit-search:hover {
             background-color: #808969;
         }
+
+        /* Styles pour le filtre */
+        .filter-form {
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .filter-form select,
+        .filter-form input[type="number"] {
+            margin-right: 10px;
+        }
+
+        .filter-form button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
     </style>
     <title>search</title>
 </head>
@@ -70,32 +91,60 @@
         <hr class="hr1">
     </nav>
 
-    <form action="search.php" method="get">
-        <div class="search1">
-            <input class="input-search" type="text" name="q" placeholder="Rechercher un produit...">
-            <input class="submit-search" type="submit" value="Rechercher">
-        </div>
-    </form>
+        <form action="search.php" method="get">
+            <div class="search1">
+                <input class="input-search" type="text" name="q" placeholder="Rechercher un produit...">
+                <input class="submit-search" type="submit" value="Rechercher">
+            </div>
+        </form>
+    <!-- filter -->
+        <form class="filter-form" method="GET">
+            <select name="color">
+                <option value="">Toutes les couleurs</option>
+                <option value="red">Rouge</option>
+                <option value="blue">Bleu</option>
+            </select>
+            <select name="size">
+                <option value="">Toutes les tailles</option>
+                <option value="small">Petite</option>
+                <option value="medium">Moyenne</option>
+            </select>
+            Prix entre :
+            <input type="number" name="min_price" placeholder="Min">
+            et
+            <input type="number" name="max_price" placeholder="Max">
+            <button type="submit">Filtrer</button>
+        </form>
+        <?php
+        // $color = $_GET['color'];
+        // $size = $_GET['size'];
+        // $min_price = $_GET['min_price'];
+        // $max_price = $_GET['max_price'];
+        ?>
+    </body>
 
-    <?php
-    if (isset($_GET['q']) && !empty($_GET['q'])) {
-        $searchTerm = $_GET['q'];
+</html>
 
-        $file = 'products.csv';
-        $products = [];
 
-        if (($handle = fopen($file, 'r')) !== false) {
-            while (($data = fgetcsv($handle, 1000, ',')) !== false) {
-                if (stripos($data[2], $searchTerm) !== false) {
-                    $products[] = $data;
-                }
+<?php
+if (isset($_GET['q']) && !empty($_GET['q'])) {
+    $searchTerm = $_GET['q'];
+
+    $file = 'products.csv';
+    $products = [];
+
+    if (($handle = fopen($file, 'r')) !== false) {
+        while (($data = fgetcsv($handle, 1000, ',')) !== false) {
+            if (stripos($data[2], $searchTerm) !== false) {
+                $products[] = $data;
             }
-            fclose($handle);
         }
-        if (!empty($products)) {
-            echo '<ul>';
-            foreach ($products as $product) {
-                echo '
+        fclose($handle);
+    }
+    if (!empty($products)) {
+        echo '<ul>';
+        foreach ($products as $product) {
+            echo '
                     <section id="sectionProduct"> 
               <div class="product">
                 <div>
@@ -165,70 +214,70 @@
             </div>
             </section>
                 ';
-            }
-            echo '</ul>';
-        } else {
-            echo 'Aucun produit trouvé.';
         }
+        echo '</ul>';
+    } else {
+        echo 'Aucun produit trouvé.';
     }
-    ?>
-    <footer id="ContactUs">
-        <div class="container_footer">
-            <div>
-                <h1>Need Help</h1>
-                <a href="#">
-                    <li>Contact Us</li>
-                </a>
-                <a href="#">
-                    <li>Track Order</li>
-                </a>
-                <a href="#">
-                    <li>Returns & Refunds</li>
-                </a>
-                <a href="#">
-                    <li>Career</li>
-                </a>
-            </div>
-            <div>
-                <h1>Company</h1>
-                <a href="#">
-                    <li>About Us</li>
-                </a>
-                <a href="#">
-                    <li>euphoria Blog</li>
-                </a>
-                <a href="#">
-                    <li>euphoriastan</li>
-                </a>
-                <a href="#">
-                    <li>Collaboration</li>
-                </a>
-            </div>
-            <div>
-                <h1>More Info</h1>
-                <a href="#">
-                    <li>Term and Conditions</li>
-                </a>
-                <a href="#">
-                    <li>Privacy Policy
-                    </li>
-                </a>
-                <a href="#">
-                    <li>Shipping Policy
-                    </li>
-                </a>
-                <a href="#">
-                    <li>Sitemap</li>
-                </a>
-            </div>
+}
+?>
+<footer id="ContactUs">
+    <div class="container_footer">
+        <div>
+            <h1>Need Help</h1>
+            <a href="#">
+                <li>Contact Us</li>
+            </a>
+            <a href="#">
+                <li>Track Order</li>
+            </a>
+            <a href="#">
+                <li>Returns & Refunds</li>
+            </a>
+            <a href="#">
+                <li>Career</li>
+            </a>
         </div>
-        <!--  -->
+        <div>
+            <h1>Company</h1>
+            <a href="#">
+                <li>About Us</li>
+            </a>
+            <a href="#">
+                <li>euphoria Blog</li>
+            </a>
+            <a href="#">
+                <li>euphoriastan</li>
+            </a>
+            <a href="#">
+                <li>Collaboration</li>
+            </a>
+        </div>
+        <div>
+            <h1>More Info</h1>
+            <a href="#">
+                <li>Term and Conditions</li>
+            </a>
+            <a href="#">
+                <li>Privacy Policy
+                </li>
+            </a>
+            <a href="#">
+                <li>Shipping Policy
+                </li>
+            </a>
+            <a href="#">
+                <li>Sitemap</li>
+            </a>
+        </div>
+    </div>
+    <!--  -->
 
-        <!--  -->
-        <hr class="hr2">
-        <p id="fin-TEXT">Copyright © 2025 HauteHavenBoutique Folks Pvt Ltd. All rights reserved.</p>
-    </footer>
-    <script src="main.js"></script>
+    <!--  -->
+    <hr class="hr2">
+    <p id="fin-TEXT">Copyright © 2025 HauteHavenBoutique Folks Pvt Ltd. All rights reserved.</p>
+</footer>
+<script src="main.js"></script>
 </body>
 
 </html>

@@ -76,7 +76,9 @@
         <div class="container_nav">
             <!-- logo -->
             <div class="tt" id="logo--text">
-                <h4>HauteHavenBoutique</h4>
+                <a href="index.php">
+                    <h4>HauteHavenBoutique</h4>
+                </a>
             </div>
             <!-- links -->
             <div class="linkss" id="linkss">
@@ -88,8 +90,8 @@
             <!-- search -->
             <form method="GET" action="">
                 <div id="form1">
-                    <input type="search" name="search" id="search_input" placeholder="Search by Title" />
-                    <button type="submit" class="btnSearch">Search</button>
+                    <!-- <input type="search" name="search" id="search_input" placeholder="Search by Title" /> -->
+                    <a class="btnSearch" href="search.php">Search</a>
                 </div>
             </form>
             <!-- icon links -->
@@ -97,7 +99,7 @@
                 <!-- icon favourite product -->
                 <a href="#" id="linkLast"><img src="picture/heart.svg" alt="" /></a>
                 <!-- icon panier -->
-                <a href="#" id="linkLast"><img src="picture/shopping cart.svg" alt="" /></a>
+                <a href="panier.php" id="linkLast"><img src="picture/shopping cart.svg" alt="" /></a>
             </div>
         </div>
         </div>
@@ -110,6 +112,9 @@
                 <th>quantity</th>
                 <th>subtotal</th>
             </tr>
+            <?php
+
+            ?>
             <tr>
                 <td>
                     <div class="cart-info">
@@ -173,9 +178,7 @@
             </table>
         </div>
     </div>
-    <?php
 
-    ?>
     <script src="main.js"></script>
 </body>
 

@@ -11,36 +11,38 @@
 
 <body>
     <nav class="nav_links">
-    <div class="container_nav">
-      <!-- logo -->
-      <div class="tt" id="logo--text">
-        <h4>HauteHavenBoutique</h4>
-      </div>
-      <!-- links -->
-      <div class="linkss" id="linkss">
-        <a href="index.php" class="links_bold">Home</a>
-        <a href="#Product" class="links_light">Product</a>
-        <a href="#Categorie" class="links_light">Categorie</a>
-        <a href="#ContactUs" class="links_light">Contact us</a>
-      </div>
-      <!-- search -->
-      <form method="GET" action="">
-        <div id="form1">
-          <input type="search" name="search" id="search_input" placeholder="Search by Title" />
-          <button type="submit" class="btnSearch">Search</button>
+        <div class="container_nav">
+            <!-- logo -->
+            <div class="tt" id="logo--text">
+                <a href="index.php">
+                    <h4>HauteHavenBoutique</h4>
+                </a>
+            </div>
+            <!-- links -->
+            <div class="linkss" id="linkss">
+                <a href="index.php" class="links_bold">Home</a>
+                <a href="#Product" class="links_light">Product</a>
+                <a href="#Categorie" class="links_light">Categorie</a>
+                <a href="#ContactUs" class="links_light">Contact us</a>
+            </div>
+            <!-- search -->
+            <form method="GET" action="">
+                <div id="form1">
+                    <input type="search" name="search" id="search_input" placeholder="Search by Title" />
+                    <button type="submit" class="btnSearch">Search</button>
+                </div>
+            </form>
+            <!-- icon links -->
+            <div class="last_links_icon">
+                <!-- icon favourite product -->
+                <a href="#" id="linkLast"><img src="picture/heart.svg" alt="" /></a>
+                <!-- icon panier -->
+                <a href="#" id="linkLast"><img src="picture/shopping cart.svg" alt="" /></a>
+            </div>
         </div>
-      </form>
-      <!-- icon links -->
-      <div class="last_links_icon">
-        <!-- icon favourite product -->
-        <a href="#" id="linkLast"><img src="picture/heart.svg" alt="" /></a>
-        <!-- icon panier -->
-        <a href="#" id="linkLast"><img src="picture/shopping cart.svg" alt="" /></a>
-      </div>
-    </div>
-    </div>
-    <hr class="hr1">
-  </nav>
+        </div>
+        <hr class="hr1">
+    </nav>
     <section id="Product">
         <div class="title_section">
             <h3>Product</h3>

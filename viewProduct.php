@@ -13,27 +13,30 @@
     <div class="container_nav">
       <!-- logo -->
       <div class="tt" id="logo--text">
-        <h4>HauteHavenBoutique</h4>
+        <a href="index.php">
+          <h4>HauteHavenBoutique</h4>
+        </a>
       </div>
       <!-- links -->
       <div class="linkss" id="linkss">
         <a href="index.php" class="links_bold">Home</a>
-        <a href="#" class="links_light">Men</a>
-        <a href="#" class="links_light">Women</a>
-        <a href="#" class="links_light">Children</a>
+        <a href="#Product" class="links_light">Product</a>
+        <a href="#Categorie" class="links_light">Categorie</a>
+        <a href="#ContactUs" class="links_light">Contact us</a>
       </div>
       <!-- search -->
-      <!--  -->
-      <!--  -->
-      <div>
-        <input type="search" name="" id="search_input" placeholder="search" />
-      </div>
+      <form method="GET" action="">
+        <div id="form1">
+          <!-- <input type="search" name="search" id="search_input" placeholder="Search by Title" /> -->
+          <a class="btnSearch" href="search.php">Search</a>
+        </div>
+      </form>
       <!-- icon links -->
       <div class="last_links_icon">
         <!-- icon favourite product -->
         <a href="#" id="linkLast"><img src="picture/heart.svg" alt="" /></a>
         <!-- icon panier -->
-        <a href="#" id="linkLast"><img src="picture/shopping cart.svg" alt="" /></a>
+        <a href="panier.php" id="linkLast"><img src="picture/shopping cart.svg" alt="" /></a>
       </div>
     </div>
     </div>
@@ -78,40 +81,25 @@
                             </select>
                         </div>
                     </div>
-                    <div class="colours" >
-                        <p style="margin-bottom: 5px; font-size: 1rem;">Colours Available :</p>
-                        <div class="btn-classcolours">
-                            <button class="btn-colours" style="
-                                background:black;
-                                border-radius:50%;
-                                width:20px;
-                                height:20px;
-                                border:2px solid wheat;
-                             "></button>
-                            <button class="btn-colours" style="
-                                background:red;
-                                border-radius:50%;
-                                width:20px;
-                                height:20px;
-                                border:2px solid wheat; "></button>
-                            <button class="btn-colours" style="
-                                background:gray;
-                                border-radius:50%;
-                                width:20px;
-                                height:20px;
-                                border:2px solid wheat; "></button>
-                            <button class="btn-colours" style="
-                                background:white;
-                                border-radius:50%;
-                                width:20px;
-                                height:20px;
-                                border:2px solid wheat; "></button>
-                        </div>
+                    <div class="color">
+                     <p style="margin-bottom: 5px; font-size: 1rem;">Colours Available :</p>
+                    <select id="pet-select" style="border-radius: 50px; width:200px;">
+                        <option val="">Colors</option>
+                        <option val="1" style="background-color:white; color:black;">white</option>
+                        <option val="2" style="background-color:black; color:white;">black</option>
+                        <option val="3" style="background-color:grey; color:white;">grey</option>
+                        <option val="4" style="background-color:beige; color:black;">beige</option>
+                    </select>
                     </div>
+
                     <div class="addc" style="padding-top: 10px;">
-                        <button class="add">add to cart</button>
-                        <button class="add">' . $row[4] . '</button>
+                        <h1 style="font-size:2rem;">'.$row[4].'</h1>
+                        <form action="panier.php" method="post">
+                            <input type="hidden" name="product_id" value="<?php echo $id; ?>">
+                            <button type="submit" class="add">Add to Cart</button>
+                        </form>
                     </div>
+
                     <div class="product-description" >
                         <h3 class="titre" style="font-size: 1rem;">
                             Product Description
