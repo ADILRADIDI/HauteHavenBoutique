@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>panier</title>
+    <title>Document</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         .cart-page {
@@ -105,81 +105,84 @@
         </div>
         <hr class="hr1">
     </nav>
-    <div class="small-container cart-page">
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+        </tr>
+        
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart'])) {
+            $product_id = $_POST['product_id'];
+            $file = fopen('panier.csv', 'a');
+            if ($file) {
+                $data = array(
+                    $row[0],
+                    $row[1],
+                    $row[2],
+                );
+                fputcsv($file, $data);
+                fclose($file);
+                header("Location: " . $_SERVER['PHP_SELF']);
+                exit;
+            } else {
+                echo "Error opening the CSV file.";
+            }
+        }
+        // 
+        $v33 = $_GET['var'];
+        $fileP = 'products.csv';
+        $file = fopen($fileP, 'r');
+        $test = true;
+        if ($file === false) {
+            echo "Failed to open file: $fileP";
+        } else {
+            while (($row = fgetcsv($file)) !== false) {
+                if ($test) {
+                    $test = false;
+                    continue;
+                } else if ($v33 == $row[0]) {
+                    echo '
+                                <tr>
+                                    <td>
+                                        <div class="cart-info">
+                                            <img class="picture" src="' . $row[5] . '">
+                                            <div>
+                                                <p>' . $row[2] . '</p>
+                                                <small>price:' . $row[4] . '</small>
+                                                <br>
+                                                <a href="" id="btn_remove">Remove</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                    <form name="form" action="" method="post">
+                                        <input type="number" value="1" name="subject">
+                                    </form>
+                                    </td>
+                                    <td><?php echo '.(int)$row[4].'</td>
+                                </tr>
+                                
+        ';
+                }
+            }
+            fclose($file);
+        };
+        ?>
+    </table>
+    <div class="total-price">
         <table>
             <tr>
-                <th>product</th>
-                <th>quantity</th>
-                <th>subtotal</th>
-            </tr>
-            <?php
-
-            ?>
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img class="picture" src="picture/women.jpeg">
-                        <div>
-                            <p>Red Printed Tshirt</p>
-                            <small>price:$50.00</small>
-                            <br>
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1"></td>
-                <td>$50.00</td>
+                <td>subtotal</td>
+                <td>$200.00</td>
             </tr>
             <tr>
-                <td>
-                    <div class="cart-info">
-                        <img class="picture" src="picture/women.jpeg">
-                        <div>
-                            <p>Red Printed Tshirt</p>
-                            <small>price:$50.00</small>
-                            <br>
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1"></td>
-                <td>$50.00</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img class="picture" src="picture/women.jpeg">
-                        <div>
-                            <p>Red Printed Tshirt</p>
-                            <small>price:$50.00</small>
-                            <br>
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1"></td>
-                <td>$50.00</td>
+                <td>Total</td>
+                <td>$235.00</td>
             </tr>
         </table>
-        <div class="total-price">
-            <table>
-                <tr>
-                    <td>subtotal</td>
-                    <td>$200.00</td>
-                </tr>
-                <tr>
-                    <td>Tax</td>
-                    <td>$35.00</td>
-                </tr>
-                <tr>
-                    <td>Total</td>
-                    <td>$235.00</td>
-                </tr>
-            </table>
-        </div>
     </div>
-
-    <script src="main.js"></script>
 </body>
 
 </html>

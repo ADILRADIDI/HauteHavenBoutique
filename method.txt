@@ -1,0 +1,68 @@
+
+                    <?php
+                    
+
+                    $fileP = 'products.csv';
+                    $file = fopen($fileP, 'r');
+                    if ($file === false) {
+                        while (($row = fgetcsv($file)) !== false) {
+                            echo '  
+                                <tr>
+                                    <td>
+                                        <div class="cart-info">
+                                            <img class="picture" src="'. $row[2].'">
+                                            <div>
+                                                <p>'.$row[0].'</p>
+                                                <small>price:'. $row[1].'</small>
+                                                <br>
+                                                <a href="">Remove</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" value="1"></td>
+                                    <td>$50.00</td>
+                                </tr>
+                            ';
+                        }
+                        fclose($file);
+                    }
+                    
+?>
+
+
+<?php
+        $v33 = $_GET['var'];
+        $fileP = 'products.csv';
+        $file = fopen($fileP, 'r');
+        $test = true;
+        if ($file === false) {
+            echo "Failed to open file: $fileP";
+        } else {
+            while (($row = fgetcsv($file)) !== false) {
+                if ($test) {
+                    $test = false;
+                    continue;
+                } else if ($v33 == $row[0]) {
+                    echo '
+                                <tr>
+                                    <td>
+                                        <div class="cart-info">
+                                            <img class="picture" src="' . $row[5] . '">
+                                            <div>
+                                                <p>' . $row[2] . '</p>
+                                                <small>price:' . $row[4] . '</small>
+                                                <br>
+                                                <a href="" id="btn_remove">Remove</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" value="1"></td>
+                                    <td>$50.00</td>
+                                </tr>
+                                
+        ';
+                }
+            }
+            fclose($file);
+        };
+        ?>

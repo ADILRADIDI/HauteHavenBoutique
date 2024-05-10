@@ -199,7 +199,7 @@ if (isset($_GET['q']) && !empty($_GET['q'])) {
                         </div>
                     </div>
                     <div class="addc" style="padding-top: 10px;">
-                        <button class="add">add to cart</button>
+                        <button class="add"><a href="panier.php">add to cart</a></button>
                         <button class="add">' . $product[4] . '</button>
                     </div>
                     <div class="product-description" >
