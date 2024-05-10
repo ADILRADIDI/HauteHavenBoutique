@@ -28,8 +28,8 @@
       <!-- search -->
       <form method="GET" action="">
         <div id="form1">
-          <input type="search" name="search" id="search_input" placeholder="Search by Title" />
-          <button type="submit" class="btnSearch">Search</button>
+          <!-- <input type="search" name="search" id="search_input" placeholder="Search by Title" /> -->
+          <a class="btnSearch" href="search.php">Search</a>
         </div>
       </form>
       <!-- icon links -->

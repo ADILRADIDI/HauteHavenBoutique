@@ -592,8 +592,12 @@ footer {
     color: black;
     border: 1px solid black;
   }
-
-
+  /*_________________________search bare_________________*/
+.search1{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
 /*========================================== media query ========================================== */
 /* ----------------------------------------------------------------------------------------------- */
 /* Media query for screens smaller than 768px (e.g., smartphones) */
@@ -614,6 +618,9 @@ footer {
   .box-1 {
     margin: 5% auto;
     width: 300px;
+  }
+  .cart-info p{
+    display: none;
   }
 }
 
