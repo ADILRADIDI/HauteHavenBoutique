@@ -97,15 +97,15 @@
             <!-- icon links -->
             <div class="last_links_icon">
                 <!-- icon favourite product -->
-                <a href="#" id="linkLast"><img src="picture/heart.svg" alt="" /></a>
-                <!-- icon panier -->
-                <a href="panier.php" id="linkLast"><img src="picture/shopping cart.svg" alt="" /></a>
+                <!-- <a href="#" id="linkLast"><img src="picture/heart.svg" alt="" /></a>
+                icon panier
+                <a href="panier.php" id="linkLast"><img src="picture/shopping cart.svg" alt="" /></a> -->
             </div>
         </div>
         </div>
         <hr class="hr1">
     </nav>
-    <table>
+    <table id="table">
         <tr>
             <th>Product</th>
             <th>Quantity</th>
@@ -113,28 +113,11 @@
         </tr>
         
         <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart'])) {
-            $product_id = $_POST['product_id'];
-            $file = fopen('panier.csv', 'a');
-            if ($file) {
-                $data = array(
-                    $row[0],
-                    $row[1],
-                    $row[2],
-                );
-                fputcsv($file, $data);
-                fclose($file);
-                header("Location: " . $_SERVER['PHP_SELF']);
-                exit;
-            } else {
-                echo "Error opening the CSV file.";
-            }
-        }
-        // 
-        $v33 = $_GET['var'];
+        $v33 = $_GET['okv'];
         $fileP = 'products.csv';
         $file = fopen($fileP, 'r');
         $test = true;
+        // $subtotal = $row[4] * 2;
         if ($file === false) {
             echo "Failed to open file: $fileP";
         } else {
@@ -161,8 +144,22 @@
                                         <input type="number" value="1" name="subject">
                                     </form>
                                     </td>
-                                    <td><?php echo '.(int)$row[4].'</td>
+                                    <!-- for subtotal price * quantity -->
+                                    <td>'. $row[4]. '</td>
                                 </tr>
+                                </table>
+                                <div class="total-price">
+                                    <table>
+                                        <tr>
+                                            <td>subtotal</td>
+                                            <td>'.$row[4]. '</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total</td>
+                                            <td>' . $row[4] . '</td>
+                                        </tr>
+                                    </table>
+                                </div>
                                 
         ';
                 }
@@ -170,19 +167,16 @@
             fclose($file);
         };
         ?>
-    </table>
-    <div class="total-price">
-        <table>
-            <tr>
-                <td>subtotal</td>
-                <td>$200.00</td>
-            </tr>
-            <tr>
-                <td>Total</td>
-                <td>$235.00</td>
-            </tr>
-        </table>
-    </div>
+        <script>
+            var btn_remove = document.getElementById("btn_remove");
+            btn_remove.addEventListener("click", function() {
+                var x = document.getElementById("table");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                    document.getElementById("btn_remove").innerHTML = "Remove";
+                }
+            });
+        </script>
 </body>
 
 </html>

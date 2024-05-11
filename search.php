@@ -82,9 +82,9 @@
             <!-- icon links -->
             <div class="last_links_icon">
                 <!-- icon favourite product -->
-                <a href="#" id="linkLast"><img src="picture/heart.svg" alt="" /></a>
+                <!-- <a href="#" id="linkLast"><img src="picture/heart.svg" alt="" /></a> -->
                 <!-- icon panier -->
-                <a href="#" id="linkLast"><img src="picture/shopping cart.svg" alt="" /></a>
+                <!-- <a href="#" id="linkLast"><img src="picture/shopping cart.svg" alt="" /></a> -->
             </div>
         </div>
         </div>
@@ -98,7 +98,7 @@
             </div>
         </form>
     <!-- filter -->
-        <form class="filter-form" method="GET">
+        <!-- <form class="filter-form" method="GET">
             <select name="color">
                 <option value="">Toutes les couleurs</option>
                 <option value="red">Rouge</option>
@@ -114,7 +114,7 @@
             et
             <input type="number" name="max_price" placeholder="Max">
             <button type="submit">Filtrer</button>
-        </form>
+        </form> -->
         <?php
         // $color = $_GET['color'];
         // $size = $_GET['size'];
@@ -199,8 +199,8 @@ if (isset($_GET['q']) && !empty($_GET['q'])) {
                         </div>
                     </div>
                     <div class="addc" style="padding-top: 10px;">
+                        <h1 style="font-size:2rem;">' . $product[4] . '</h1>
                         <button class="add"><a href="panier.php">add to cart</a></button>
-                        <button class="add">' . $product[4] . '</button>
                     </div>
                     <div class="product-description" >
                         <h3 class="titre" style="font-size: 1rem;">

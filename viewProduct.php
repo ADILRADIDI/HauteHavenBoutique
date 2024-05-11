@@ -34,9 +34,9 @@
       <!-- icon links -->
       <div class="last_links_icon">
         <!-- icon   favourite product -->
-        <a href="#" id="linkLast"><img src="picture/heart.svg" alt="" /></a>
+        <!-- <a href="#" id="linkLast"><img src="picture/heart.svg" alt="" /></a> -->
         <!-- icon    panier -->
-        <a href="panier.php" id="linkLast"><img src="picture/shopping cart.svg" alt="" /></a>
+        <!-- <a href="panier.php" id="linkLast"><img src="picture/shopping cart.svg" alt="" /></a> -->
       </div>
     </div>
     </div>
@@ -96,7 +96,7 @@
                         <h1 style="font-size:2rem;">'.$row[4]. '</h1>
                         <form action="panier.php" method="GET">
                             <input type="hidden" name="product_id" value="'.$row[0]. '">
-                            <a class="add" href="panier.php?var=' . $row[0] . '" style="padding:10px 20px;">add to card</a>
+                            <a class="add" href="panier.php?okv=' . $row[0] . '" style="padding:10px 20px;">add to card</a>
                             
                         </form>
                     </div>

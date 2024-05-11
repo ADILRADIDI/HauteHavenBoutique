@@ -37,9 +37,9 @@
                   <!-- icon links -->
                   <div class="last_links_icon">
                     <!-- icon favourite product -->
-                    <a href="#" id="linkLast"><img src="picture/heart.svg" alt="" /></a>
+                    <!-- <a href="#" id="linkLast"><img src="picture/heart.svg" alt="" /></a> -->
                     <!-- icon panier -->
-                    <a href="panier.php" id="linkLast"><img src="picture/shopping cart.svg" alt="" /></a>
+                    <!-- <a href="panier.php" id="linkLast"><img src="picture/shopping cart.svg" alt="" /></a> -->
                   </div>
                 </div>
                 </div>
@@ -65,7 +65,6 @@
                 </div>
                 <div id="productsContainer">
                   <?php
-
                   function displayDProduct($row)
                   {
                     $id = htmlspecialchars($row[0]);

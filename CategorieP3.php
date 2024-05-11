@@ -28,16 +28,16 @@
             <!-- search -->
             <form method="GET" action="">
                 <div id="form1">
-                    <input type="search" name="search" id="search_input" placeholder="Search by Title" />
-                    <button type="submit" class="btnSearch">Search</button>
+                    <!-- <input type="search" name="search" id="search_input" placeholder="Search by Title" /> -->
+                    <a class="btnSearch" href="search.php">Search</a>
                 </div>
             </form>
             <!-- icon links -->
             <div class="last_links_icon">
-                <!-- icon favourite product -->
-                <a href="#" id="linkLast"><img src="picture/heart.svg" alt="" /></a>
-                <!-- icon panier -->
-                <a href="#" id="linkLast"><img src="picture/shopping cart.svg" alt="" /></a>
+                <!-- icon   favourite product -->
+                <!-- <a href="#" id="linkLast"><img src="picture/heart.svg" alt="" /></a> -->
+                <!-- icon    panier -->
+                <!-- <a href="panier.php" id="linkLast"><img src="picture/shopping cart.svg" alt="" /></a> -->
             </div>
         </div>
         </div>
